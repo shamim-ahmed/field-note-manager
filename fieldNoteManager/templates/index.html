@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Field Note Manager</title>
+  <script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="/static/js/wildCardSearch.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+</head>
+<body>
+  <div id="header">
+    <h1>Field Note Manager</h1>
+  </div>
+  
+  <div id="main">
+    <div id="content">
+      <div id="excursions">
+        {% if excursions %}
+          <h2>Your excursions</h2>
+          <table>
+            <tr><th>Location</th><th>Date</th><th>Time</th></tr>
+              {% for excursion in excursions %}
+                <tr><td>{{ excursion.location }}</td><td>{{ excursion.date }}</td><td>{{ excursion.time }}</td></tr>
+              {% endfor %}
+          </table>    
+        {% endif %}
+      </div>
+      
+      <div id="query">
+        <h2>Queries</h2>
+      
+		    <ul>
+		      <li>List by location : <form action="/fieldNoteManager/searchByLocation/" method="get" class="inlineForm"><input type="text" name="location" id="locationfield"/><input type="submit" value="Go"/></form></li>
+		      <li>List by species &nbsp;: <form action="/fieldNoteManager/searchBySpecies/" method="get" class="inlineForm"><input type="text" name="species" id="speciesfield"/><input type="submit" value="Go"/></form></li>
+		    </ul>
+      </div>
+    </div>
+    
+    <div id="login">
+      <div class="inputForm">
+        {% if user %}
+          Hello, {{ user.userName }} <br/>
+          <form action="/fieldNoteManager/logout/" method="post">
+            <input type="submit" value="Logout" class="logout"/>
+          </form>
+        
+          <div id="addnote">
+            <a href="/fieldNoteManager/showLocationForm/">Add field note</a>
+          </div>
+        {% else %}
+	        Login Username <br/>
+	        <form action="/fieldNoteManager/login/" method="post">
+	          <input type="text" name="userName" size="12"/><br/>
+	          <input type="password" name="password" size="12"/><br/>
+	          <input type="submit" value="Login"/>
+	        </form>
+	        
+	        {% if errorMessage %}
+	          <div class="error">{{ errorMessage }}</div>
+	        {% endif %}
+	        
+	        <div class="registerLink">
+	          <p>New User ? <a href="/fieldNoteManager/showRegisterForm/">Register</a></p>
+	        </div>
+        {% endif %}
+      </div>  
+    </div>
+  </div>
+  
+  <div id="footer">
+    <div>
+      Suggestions : <span id="suggestions">No suggestions</span>
+    </div>
+  </div>
+</body>
+</html>

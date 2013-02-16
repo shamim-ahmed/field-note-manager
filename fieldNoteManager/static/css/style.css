@@ -1,0 +1,188 @@
+#header {
+  font-family: sans-serif;
+  background-color: #7AB689;
+  color: black;
+  width: 100%;
+  height: 100px;
+}
+
+#header h1 {
+  text-align: center;
+  padding-top: 30px;
+  margin:0px;
+}
+
+#main {
+  font-family: sans-serif;
+  background-color: #E6F6DC;
+  color: black;
+  width:100%;
+  position:relative;
+}
+
+#main #content {
+  background-color: #E6F6DC;
+  min-height: 200px;
+}
+
+#main #content h2 {
+  padding-left: 10px;
+  margin-top:0px;
+  padding-top:15px;
+}
+
+#main #content #query {
+  min-height: 200px;
+}
+
+#main #login {
+  background-color: #CDE9FF;
+  width: 25%;
+  z-index:1;
+  position:absolute;
+  right:0;
+  top:0;
+  min-height: 200px;
+}
+
+#footer {
+  font-family: sans-serif;
+  background-color: #CCCCCC;
+  color: black;
+  clear: both;
+  min-height: 8px;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+#footer div {
+  padding-bottom:20px;
+}
+
+.inputForm {
+  padding-left: 15px;
+  padding-top : 20px;
+}
+
+input {
+  margin-top: 3px;
+  margin-bottom : 3px;
+  margin-left: 3px;
+}
+
+.inlineForm {
+  display: inline; 
+}
+
+input.logout {
+  margin-top: 15px;
+}
+
+div#excursions table {
+  margin-left: 10px;
+}
+
+div#addnote {
+  margin-top: 10px;
+}
+
+/* style for addnote page */
+div#mainlink {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+div#userinfo {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+form#addnoteform {
+  margin-left: 10px;
+  padding-bottom: 10px;
+}
+
+/* styles for add page */
+div#excursioninfo, div#observations {
+  margin-left: 10px
+}
+
+div#obsform {
+  padding-bottom: 10px;
+}
+
+div#excurId {
+  display: none;
+}
+
+/*style for query result*/
+div#queryinfo, div#queryresult {
+  margin-left: 10px;
+}
+
+/*style for error message*/
+.error {
+  color:red;
+}
+
+/*style for maps*/
+#mapheader {
+  font-family: sans-serif;
+  background-color: #7AB689;
+  color: black;
+  width: 100%;
+  height: 100px;
+  margin-bottom:20px;
+}
+
+#mapheader h1 {
+  text-align: center;
+  padding-top: 30px;
+  margin:0px;
+}
+
+div.maps {
+	width:100%;
+	height:100%;
+}
+
+div.gmap {
+	width:50%;
+	height:50%;
+	margin-bottom:50px;
+	float:left;
+}
+
+div.mapinfo {
+	width:40%;
+  height:50%;
+	float:right;
+	padding-top:70px;
+}
+
+div.mapinfo span.label {
+	color: #FC14FC;
+}
+
+div.mapinfo span.value {
+	color: #1A8AE0;
+}
+
+/*style for wikipedia articles*/
+div.articles div.article {
+	margin-top: 20px;
+	padding-bottom: 20px;
+}
+
+div.articles div.article h3 {
+	margin-bottom: 5px;
+}
+
+/* jquery ui */
+div.ui-datepicker {
+ font-size:10px;
+}
+
+div.ui-timepicker {
+ font-size:10px;
+}

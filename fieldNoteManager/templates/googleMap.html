@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Field Note Manager</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+  <style type="text/css">
+    html { height: 100% }
+    body { height: 100%; margin: 0; padding: 0; background-color:#E6F6DC; }
+  </style>
+  
+  <script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB9HVZluA2lVYz_hcYgSaNq-j8ArZVSHpc&sensor=true"></script>
+  <script type="text/javascript" src="/static/js/googleMap.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+</head>
+
+<body>
+  <div id="mapheader">
+   <h1>Google Map for {{ locationName }}</h1> 
+  </div>
+  <div id="mainlink"><a href="/fieldNoteManager/">[main]</a></div>
+  
+  {% if locationList %}
+    <div class="maps">
+       {% for loc in locationList %}
+         <div id="{{ loc.divId }}" class="gmap"></div>
+          <div class="mapinfo">
+           <span class="label">City : </span><span class="value">{{ loc.city }}</span><br/>
+           <span class="label">State : </span><span class="value">{{ loc.state }}</span><br/>
+           <span class="label">Country : </span><span class="value">{{ loc.country }}</span><br/>
+           <span class="label">Latitude : </span><span class="value">{{ loc.latitude }}</span><br/>
+           <span class="label">Longitude : </span><span class="value">{{ loc.longitude }}</span>
+         </div>
+         <div style="clear:both;">&nbsp;</div>
+         <script type="text/javascript">
+           $(document).ready(function() {
+              renderMap('{{ loc.latitude }}', '{{ loc.longitude }}', '{{ loc.divId }}');
+           });
+         </script>
+         
+       {% endfor %}
+    </div>
+  {% endif %}
+  
+  <div id="footer">
+  </div>
+</body>
+</html>

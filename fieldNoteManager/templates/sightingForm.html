@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>Field Note Manager</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+  <script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="/static/js/sighting.js"></script>
+</head>
+<body>
+  <div id="header">
+    <h1>Field Note Manager</h1>
+  </div>
+  
+  <div id="main">
+    <div id="mainlink"><a href="/fieldNoteManager/">[main]</a></div>
+    
+    <div id="excursioninfo">
+      <p>Your name : {{ user.userName }}</p>
+      <p>Location : {{ excursion.location }}</p>
+      <p>Date : {{ excursion.date }}</p>
+      <p>Time : {{ excursion.time }}</p>
+    </div>
+    
+    <div id="observations">
+      <h2>Observations</h2>
+      
+      <div class="list">
+        <ul id="obslist">
+        </ul>
+      </div>
+      
+      <div id="obsform">
+        What did you see? <input type="text" name="obs" id="obsfield"/>&nbsp;<span id="obsErrId" class="error">&nbsp;</span><br/>
+        <input type="button" value="Add observation" id="obsbutton"/>
+      </div>
+      
+      <div id="excurId">{{ excursion.id }}</div>
+    </div>
+  </div>
+  
+  <div id="footer">
+  </div>
+</body>
+</html>

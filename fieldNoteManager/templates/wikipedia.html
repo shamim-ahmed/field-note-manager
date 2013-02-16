@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Field Note Manager</title>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+</head>
+<body>
+  <div id="header">
+    <h1>Wikipedia Search Result</h1>
+  </div>
+  
+  <div id="main">
+    <div id="mainlink"><a href="/fieldNoteManager/">[main]</a></div>
+    
+    <div class="articles">
+	    {% for wikiEntry in wikiEntryList %}
+	      <div class="article">
+	        {% if wikiEntry.imageUrl %}
+	          <a href="{{ wikiEntry.articleUrl }}">
+	            <img src="{{ wikiEntry.imageUrl }}" width="{{ wikiEntry.imageWidth }}" height="{{ wikiEntry.imageHeight }}"/>
+	          </a>
+	        {% endif %}
+	        <h3>{{ wikiEntry.title }}</h3>
+	        <div class="description">{{ wikiEntry.description }}</div>
+	        <div class="link"><a href="{{ wikiEntry.articleUrl }}">Read More</a></div>
+	      </div>
+	    {% endfor %}
+    </div>
+  </div>  
+  
+  <div id="footer">
+  </div>
+</body>
+</html>

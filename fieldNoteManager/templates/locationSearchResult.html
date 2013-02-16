@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+      
+<html>
+<head>
+  <title>Field Note Manager</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+  <script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+  <div id="header">
+    <h1>Query Results</h1>
+  </div>
+  <div id="main">
+    <div id="mainlink"><a href="/fieldNoteManager/">[main]</a></div>
+    <div id="queryinfo"><p>The location is <a href="/fieldNoteManager/showMap/?location={{ location }}">{{ location }}</a></p></div>
+    <div id="queryresult">
+       <table>
+         <tr><th>Observation</th><th>Place</th></tr>
+         {% if sightings %}
+           {% for sighting in sightings %}
+             <tr><td>{{ sighting.species }}</td><td>{{ sighting.excursion.location }}</td></tr>
+           {% endfor %}
+         {% endif %}
+       </table>
+    </div>
+  </div>
+  <div id="footer">
+  </div>  
+</body>
+</html>
+ 

@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>Field Note Manager</title>
+  <script type="text/javascript" src="/static/js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="/static/js/validate.js"></script>
+  <script type="text/javascript" src="/static/jquery-ui/jquery-ui-1.8.20.custom.min.js"></script>
+  <script type="text/javascript" src="/static/jquery-ui/jquery-ui-timepicker-addon.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/jquery-ui/jquery-ui-1.8.20.custom.css"/>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+</head>
+<body>
+  <div id="header">
+    <h1>Add Field Note</h1>
+  </div>
+  <div id="main">
+    <div id="mainlink"><a href="/fieldNoteManager/">[main]</a></div>
+    <div id="userinfo">Your name : {{ user.userName }}</div>
+    <form action="/fieldNoteManager/addLocation/" method="post" name="excurform" id="addnoteform" onsubmit="return validateExcursionForm()">
+      Location: <input type="text" name="location"/><span id="locationErrId" class="error">&nbsp;</span><br/>
+      Date: <input type="text" name="date" id="datepicker"/><span id="dateErrId" class="error">&nbsp;</span><br/>
+      Time: <input type="text" name="time" id="timepicker"/><span id="timeErrId" class="error">&nbsp;</span><br/>    
+      <input type="submit" value="Submit"/>
+    </form>
+  </div>
+  
+  <script type="text/javascript">
+    $(document).ready(function() {
+    	$("#datepicker").datepicker({dateFormat: 'dd/mm/yy'});
+    	$("#timepicker").timepicker({});
+    });
+  </script>
+  
+  <div id="footer">
+  </div>
+</body>
+</html>
