@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/shamim/codes/python-projects/assignment2/sqlite.db',                      # Or path to database file if using sqlite3.
+        'NAME': '/home/shamim/github-projects/field-note-manager/sqlite.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -59,7 +59,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/home/shamim/codes/python-projects/assignment2/fieldNoteManager'
+STATIC_ROOT = '/home/shamim/github-projects/field-note-manager/fieldNoteManager'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -119,7 +119,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/shamim/codes/python-projects/assignment2/fieldNoteManager'
+    '/home/shamim/github-projects/field-note-manager/fieldNoteManager'
 )
 
 INSTALLED_APPS = (
@@ -145,23 +145,7 @@ INSTALLED_APPS = (
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        }
-    },
-    'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        }
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    }
+    'filters': {},
+    'handlers': {},
+    'loggers': {}
 }
